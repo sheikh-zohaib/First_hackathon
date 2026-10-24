@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Portal - Luxe Talent</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="brand"><i class="fa-solid fa-cube"></i> <span class="company-name-el">Luxe Talent</span></div>
+      <div class="user-profile">
+        <div class="avatar" id="user-avatar-initials">EM</div>
+        <div class="info"><h4 id="user-display-name">Employee</h4><span id="user-display-role" class="badge-role">STAFF</span></div>
+      </div>
+      <nav class="nav-menu">
+        <a href="employee.html" class="nav-item active"><i class="fa-solid fa-clock"></i> Attendance & Leaves</a>
+        <a href="payslip.html" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i> My Payslip</a>
+      </nav>
+      <div class="sidebar-footer"><button id="logout-btn" class="btn btn-outline btn-block">Sign Out</button></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-header">
+        <div><h1>Employee Self-Service</h1><p class="subtitle">Mark attendance and submit leave requests</p></div>
+        <span id="current-date"></span>
+      </header>
+
+      <div class="card clock-box">
+        <h2>Daily Punch Clock</h2>
+        <div class="clock-display" id="live-clock">00:00:00 PM</div>
+        <div class="clock-actions">
+          <button id="btn-check-in" class="btn btn-success btn-lg">Check In</button>
+          <button id="btn-check-out" class="btn btn-danger btn-lg">Check Out</button>
+        </div>
+      </div>
+
+      <div class="card mt-20">
+        <h3>Apply For Leave</h3>
+        <form id="leave-form" class="mt-15">
+          <div class="form-group"><label>Leave Type</label>
+            <select id="leave-type" required><option value="Casual">Casual</option><option value="Sick">Sick</option><option value="Annual">Annual</option></select>
+          </div>
+          <div class="form-group"><label>Reason / Letter</label><textarea id="leave-reason" rows="2" required></textarea></div>
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+        </form>
+      </div>
+
+      <div class="card mt-20">
+        <h3>My Leave History & Status</h3>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>Type</th><th>Date</th><th>Days</th><th>Status</th><th>Admin Remark</th></tr></thead>
+            <tbody id="my-leaves-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
