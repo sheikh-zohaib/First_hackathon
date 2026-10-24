@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payslip - Luxe Talent</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="brand"><i class="fa-solid fa-cube"></i> <span class="company-name-el">Luxe Talent</span></div>
+      <div class="user-profile">
+        <div class="avatar" id="user-avatar-initials">EM</div>
+        <div class="info"><h4 id="user-display-name">Employee</h4><span id="user-display-role" class="badge-role">STAFF</span></div>
+      </div>
+      <nav class="nav-menu">
+        <a href="employee.html" class="nav-item"><i class="fa-solid fa-clock"></i> Attendance & Leaves</a>
+        <a href="payslip.html" class="nav-item active"><i class="fa-solid fa-file-invoice-dollar"></i> My Payslip</a>
+      </nav>
+      <div class="sidebar-footer"><button id="logout-btn" class="btn btn-outline btn-block">Sign Out</button></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-header">
+        <div><h1>Salary Payslip</h1><p class="subtitle">Monthly statement and earnings</p></div>
+      </header>
+
+      <div class="card" style="max-width: 600px;">
+        <div id="payslip-box" class="payslip-box"></div>
+        <button onclick="window.print()" class="btn btn-secondary mt-20"><i class="fa-solid fa-print"></i> Print Payslip</button>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
