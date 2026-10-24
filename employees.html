@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Employees - Luxe Talent</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="brand"><i class="fa-solid fa-cube"></i> <span class="company-name-el">Luxe Talent</span></div>
+      <div class="user-profile">
+        <div class="avatar" id="user-avatar-initials">AR</div>
+        <div class="info"><h4 id="user-display-name">Alexandra Reid</h4><span id="user-display-role" class="badge-role">ADMIN</span></div>
+      </div>
+      <nav class="nav-menu">
+        <a href="admin.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="employees.html" class="nav-item active"><i class="fa-solid fa-users"></i> Employees</a>
+        <a href="leaves.html" class="nav-item"><i class="fa-solid fa-envelope-open-text"></i> Leave Requests</a>
+        <a href="settings.html" class="nav-item"><i class="fa-solid fa-sliders"></i> Settings</a>
+      </nav>
+      <div class="sidebar-footer"><button id="logout-btn" class="btn btn-outline btn-block">Sign Out</button></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-header">
+        <div><h1>Employee Directory</h1><p class="subtitle">Manage staff accounts and credentials</p></div>
+        <button class="btn btn-primary" id="open-add-modal"><i class="fa-solid fa-user-plus"></i> Add Employee</button>
+      </header>
+
+      <div class="card">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Department</th><th>Salary ($)</th><th>Action</th></tr></thead>
+            <tbody id="employees-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="add-emp-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-modal" id="close-emp-modal">&times;</span>
+      <h2>Add New Employee</h2>
+      <form id="add-emp-form" class="mt-15">
+        <div class="form-group"><label>Full Name</label><input type="text" id="new-emp-name" required /></div>
+        <div class="form-group"><label>Email Address</label><input type="email" id="new-emp-email" required /></div>
+        <div class="form-group"><label>Password</label><input type="password" id="new-emp-pass" required /></div>
+        <div class="form-group"><label>Department</label>
+          <select id="new-emp-dept" required><option value="HR">HR</option><option value="IT">IT</option><option value="Finance">Finance</option><option value="Sales">Sales</option></select>
+        </div>
+        <div class="form-group"><label>Monthly Salary ($)</label><input type="number" id="new-emp-salary" min="1" required /></div>
+        <button type="submit" class="btn btn-primary btn-block">Save Employee</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
