@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Luxe Talent</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="brand-badge"><i class="fa-solid fa-cube"></i></div>
+        <h2>Luxe Talent</h2>
+        <p>Enterprise Workforce Portal</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button type="button" class="tab-btn active" id="tab-admin-login">Admin Login</button>
+        <button type="button" class="tab-btn" id="tab-emp-login">Employee Login</button>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group"><label>Admin Email</label><input type="email" id="login-email" placeholder="admin@company.com" required /></div>
+        <div class="form-group"><label>Password</label><input type="password" id="login-password" placeholder="••••••••" required /></div>
+        <div id="login-error" class="error-msg hidden">Invalid credentials.</div>
+        <button type="submit" class="btn btn-primary btn-block">Sign In as Admin</button>
+        <p class="auth-toggle">First time setup? <a href="#" id="show-setup-link">Initialize Setup</a></p>
+      </form>
+
+      <form id="emp-login-form" class="hidden">
+        <div class="form-group"><label>Employee Email</label><input type="email" id="emp-login-email" placeholder="employee@company.com" required /></div>
+        <div class="form-group"><label>Password</label><input type="password" id="emp-login-password" placeholder="••••••••" required /></div>
+        <div id="emp-login-error" class="error-msg hidden">Invalid employee login.</div>
+        <button type="submit" class="btn btn-primary btn-block">Sign In as Employee</button>
+      </form>
+
+      <form id="setup-form" class="hidden">
+        <div class="form-group"><label>Company Name</label><input type="text" id="setup-company-name" placeholder="Luxe Talent" required /></div>
+        <div class="form-group"><label>Admin Name</label><input type="text" id="setup-admin-name" placeholder="Alexandra Reid" required /></div>
+        <div class="form-group"><label>Admin Email</label><input type="email" id="setup-admin-email" placeholder="admin@company.com" required /></div>
+        <div class="form-group"><label>Admin Password</label><input type="password" id="setup-admin-password" placeholder="••••••••" required /></div>
+        <button type="submit" class="btn btn-success btn-block">Complete Setup</button>
+        <p class="auth-toggle">Back to <a href="#" id="show-login-link">Sign In</a></p>
+      </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
